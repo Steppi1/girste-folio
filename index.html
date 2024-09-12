@@ -4,20 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Il Mio Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Collega il tuo file CSS -->
+    <title>Portfolio Lorem Ipsum</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il file CSS -->
+    <style>
+        /* Stile base per il layout e la responsività */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        /* Layout grid per la gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery div {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Colori diversi per ogni immagine segnaposto */
+        .gallery div:nth-child(1) {
+            background-color: #ff7f7f;
+        }
+
+        .gallery div:nth-child(2) {
+            background-color: #ffbf7f;
+        }
+
+        .gallery div:nth-child(3) {
+            background-color: #ffff7f;
+        }
+
+        .gallery div:nth-child(4) {
+            background-color: #7fff7f;
+        }
+
+        .gallery div:nth-child(5) {
+            background-color: #7f7fff;
+        }
+
+        .gallery div:nth-child(6) {
+            background-color: #bf7fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery div {
+                height: 200px;
+            }
+        }
+
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Benvenuto al mio Portfolio</h1>
+        <h1>Lorem Ipsum Portfolio</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula ligula eget.</p>
     </header>
-    
-    <section>
-        <!-- Contenuto del sito -->
+
+    <section class="gallery">
+        <div>Image 1</div>
+        <div>Image 2</div>
+        <div>Image 3</div>
+        <div>Image 4</div>
+        <div>Image 5</div>
+        <div>Image 6</div>
     </section>
 
     <footer>
-        <p>Copyright © 2024</p>
+        <p>Copyright © 2024 Lorem Ipsum</p>
     </footer>
+
 </body>
 </html>
