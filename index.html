@@ -7,75 +7,69 @@
     <title>Portfolio Lorem Ipsum</title>
     <style>
         /* Stile base per il layout e la responsività */
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            color: #333;
         }
 
+        /* Header */
         header {
-            text-align: center;
-            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
         }
 
         header p {
             font-size: 1.2rem;
+            max-width: 600px;
             color: #555;
+            margin-top: 20px;
         }
 
-        /* Layout grid per la gallery */
+        /* Sezione Progetti/Immagini */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .gallery div {
             height: 300px;
+            background-color: lightgray;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: lightgray;
             color: white;
             font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        /* Colori diversi per ogni immagine segnaposto */
-        .gallery div:nth-child(1) {
-            background-color: #ff7f7f;
-        }
+        /* Colori diversi per simulare immagini */
+        .gallery div:nth-child(1) { background-color: #ff7f7f; }
+        .gallery div:nth-child(2) { background-color: #ffbf7f; }
+        .gallery div:nth-child(3) { background-color: #ffff7f; }
+        .gallery div:nth-child(4) { background-color: #7fff7f; }
+        .gallery div:nth-child(5) { background-color: #7f7fff; }
+        .gallery div:nth-child(6) { background-color: #bf7fff; }
 
-        .gallery div:nth-child(2) {
-            background-color: #ffbf7f;
-        }
-
-        .gallery div:nth-child(3) {
-            background-color: #ffff7f;
-        }
-
-        .gallery div:nth-child(4) {
-            background-color: #7fff7f;
-        }
-
-        .gallery div:nth-child(5) {
-            background-color: #7f7fff;
-        }
-
-        .gallery div:nth-child(6) {
-            background-color: #bf7fff;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -83,10 +77,14 @@
             color: white;
         }
 
-        /* Media Query per dispositivi mobili */
+        /* Responsività per dispositivi mobili */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
             }
 
             .gallery div {
@@ -98,11 +96,13 @@
 </head>
 <body>
 
+    <!-- Header con il titolo principale -->
     <header>
         <h1>Lorem Ipsum Portfolio</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula ligula eget.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula ligula eget felis sollicitudin, ut condimentum nunc luctus.</p>
     </header>
 
+    <!-- Sezione immagini (placeholder con quadrati colorati) -->
     <section class="gallery">
         <div>Image 1</div>
         <div>Image 2</div>
@@ -112,6 +112,7 @@
         <div>Image 6</div>
     </section>
 
+    <!-- Footer con i crediti -->
     <footer>
         <p>Copyright © 2024 Lorem Ipsum</p>
     </footer>
