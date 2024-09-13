@@ -1,63 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Simile a Suyoungy</title>
+    <title>Portfolio Minimalista</title>
+    <style>
+        /* Stile base per il layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: normal;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        /* Sezione principale */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Griglia progetti */
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 100px 20px;
+        }
+
+        .portfolio-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+            background-color: #ccc;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        footer p {
+            color: #666;
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0;">
+<body>
 
     <!-- Header -->
-    <header style="text-align: center; padding: 80px 0; border-bottom: 1px solid #ccc;">
-        <h1 style="font-size: 4rem; font-weight: normal; margin-bottom: 20px;">Il Mio Portfolio</h1>
-        <p style="font-size: 1.2rem; color: #666;">Graphic Designer | Web Developer | Creativo</p>
+    <header>
+        <div>
+            <h1>Il Mio Portfolio</h1>
+            <p>Graphic Designer | Web Developer</p>
+        </div>
     </header>
 
-    <!-- Container -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
-        <!-- Introduzione -->
-        <section style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Chi Sono</h2>
-            <p style="font-size: 1.1rem; color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae gravida ipsum. Nulla facilisi. Donec vulputate urna eu nisi volutpat, non tempor nulla hendrerit.</p>
-        </section>
+    <!-- Sezione Chi Sono -->
+    <section>
+        <h2>Chi Sono</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae gravida ipsum. Nulla facilisi. Donec vulputate urna eu nisi volutpat, non tempor nulla hendrerit.</p>
+    </section>
 
-        <!-- Sezione Portfolio (griglia come suyoungy.com) -->
-        <section class="portfolio" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
-            <!-- Progetto 1 -->
-            <div class="portfolio-item" style="text-align: center;">
-                <div style="width: 100%; padding-bottom: 75%; background-color: #7f8c8d; position: relative;"></div>
-                <h3 style="font-size: 1.8rem; margin: 20px 0;">Progetto 1</h3>
-                <p style="font-size: 1rem; color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+    <!-- Sezione Portfolio -->
+    <section class="portfolio">
+        <!-- Progetto 1 -->
+        <div class="portfolio-item">
+            <img src="#" alt="Progetto 1" style="background-color: #7f8c8d;">
+            <h3>Progetto 1</h3>
+            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
+        </div>
 
-            <!-- Progetto 2 -->
-            <div class="portfolio-item" style="text-align: center;">
-                <div style="width: 100%; padding-bottom: 75%; background-color: #3498db; position: relative;"></div>
-                <h3 style="font-size: 1.8rem; margin: 20px 0;">Progetto 2</h3>
-                <p style="font-size: 1rem; color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+        <!-- Progetto 2 -->
+        <div class="portfolio-item">
+            <img src="#" alt="Progetto 2" style="background-color: #3498db;">
+            <h3>Progetto 2</h3>
+            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
+        </div>
 
-            <!-- Progetto 3 -->
-            <div class="portfolio-item" style="text-align: center;">
-                <div style="width: 100%; padding-bottom: 75%; background-color: #e74c3c; position: relative;"></div>
-                <h3 style="font-size: 1.8rem; margin: 20px 0;">Progetto 3</h3>
-                <p style="font-size: 1rem; color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-
-            <!-- Progetto 4 -->
-            <div class="portfolio-item" style="text-align: center;">
-                <div style="width: 100%; padding-bottom: 75%; background-color: #2ecc71; position: relative;"></div>
-                <h3 style="font-size: 1.8rem; margin: 20px 0;">Progetto 4</h3>
-                <p style="font-size: 1rem; color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </section>
-    </div>
+        <!-- Progetto 3 -->
+        <div class="portfolio-item">
+            <img src="#" alt="Progetto 3" style="background-color: #e74c3c;">
+            <h3>Progetto 3</h3>
+            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer style="text-align: center; padding: 40px 20px; background-color: #fff; border-top: 1px solid #ccc;">
-        <p style="font-size: 1rem; color: #666;">&copy; 2024 Il Mio Nome. Tutti i diritti riservati.</p>
+    <footer>
+        <p>&copy; 2024 Il Mio Nome. Tutti i diritti riservati.</p>
     </footer>
 
 </body>
