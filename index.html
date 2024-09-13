@@ -48,7 +48,7 @@
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px; /* Testo molto vicino alla barra */
+            margin-bottom: 5px; /* Testo molto vicino alla barra */
         }
 
         .three-columns div {
@@ -272,81 +272,10 @@
 
     <!-- SEZIONE 7 -->
     <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+        <div class="archive">
+            <a href="#">Archivi</a>
         </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 19">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 20">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 21">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
     </section>
-
-    <!-- SEZIONE 8 -->
-    <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 22">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 23">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 24">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-    </section>
-
-    <!-- Archivio -->
-    <div class="archive">
-        <a href="https://example.com/archivio" target="_blank">Archivio</a>
-    </div>
-
-    <script>
-        const sliders = document.querySelectorAll('.slider');
-        
-        sliders.forEach(slider => {
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            slider.addEventListener('mousedown', (e) => {
-                isDown = true;
-                slider.classList.add('active');
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            });
-
-            slider.addEventListener('mouseleave', () => {
-                isDown = false;
-                slider.classList.remove('active');
-            });
-
-            slider.addEventListener('mouseup', () => {
-                isDown = false;
-                slider.classList.remove('active');
-            });
-
-            slider.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // Velocità di scorrimento
-                slider.scrollLeft = scrollLeft - walk;
-            });
-        });
-    </script>
 
 </body>
 </html>
