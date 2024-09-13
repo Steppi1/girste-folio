@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Courier New', monospace; /* Font monospace */
+            font-family: 'Helvetica', sans-serif; /* Cambiato il font in Helvetica */
             color: #333;
             background-color: #fff;
             line-height: 1.6;
@@ -42,11 +42,6 @@
         .section {
             padding: 0; /* Rimuovere il padding */
             text-align: center;
-        }
-
-        .section h1 {
-            font-size: 1.2rem; /* Testo ridotto */
-            margin-bottom: 10px;
         }
 
         .divider {
@@ -111,6 +106,17 @@
         }
 
         @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column; /* Incolonnare il testo in mobile */
+                align-items: flex-start; /* Allineamento a sinistra */
+            }
+
+            .top-bar div {
+                width: 100%;
+                text-align: left; /* Testo allineato a sinistra */
+                margin-bottom: 10px;
+            }
+
             .three-columns {
                 flex-direction: column; /* Colonne incolonnate su schermi mobili */
                 align-items: flex-start; /* Allineare a sinistra su schermi mobili */
@@ -123,7 +129,8 @@
             }
 
             .slider img {
-                height: 400px; /* Ancora più piccolo su schermi mobili */
+                height: auto;
+                max-width: 100%; /* Mantenere proporzioni 1000x600 ma ridurre per mobile */
             }
         }
     </style>
@@ -142,7 +149,6 @@
 
     <!-- Sezione 1 -->
     <section class="section">
-        <div class="divider"></div>
         <div class="three-columns">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
@@ -180,7 +186,6 @@
 
     <!-- Sezione 2 -->
     <section class="section">
-        <div class="divider"></div>
         <div class="three-columns">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
