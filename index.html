@@ -67,26 +67,10 @@
 
         .image-text-container {
             margin: 20px 0;
+            overflow: hidden; /* Per garantire che il contenuto non esca dal bordo */
         }
 
-        .image-text-container img {
-            width: 100%;
-            max-width: 1000px;
-            height: 600px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .image-text-container p {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 10px;
-            max-width: 1000px;
-            margin: 10px auto;
-        }
-
-        /* Slider */
-        .slider {
+        .image-text-container .slider {
             display: flex;
             overflow: hidden;
             width: 100%;
@@ -98,14 +82,14 @@
         .slider-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 100%;
+            white-space: nowrap;
         }
 
         .slider img {
-            width: 100%;
+            width: auto;
             height: 600px;
-            display: block;
-            margin: 0 auto;
+            display: inline-block;
+            margin-right: 0;
         }
 
         /* Styling for the 'archive' section */
