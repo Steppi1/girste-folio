@@ -17,7 +17,7 @@
             color: #333;
             background-color: #fff;
             line-height: 1.8;
-            overflow-y: hidden; /* Nascondi la barra di scorrimento verticale su tutta la pagina */
+            overflow-y: auto; /* Permette lo scroll della pagina */
         }
 
         /* Sezione principale */
@@ -52,8 +52,7 @@
 
         .slider {
             display: flex;
-            overflow-x: auto;
-            width: 100%;
+            overflow-x: scroll; /* Permette lo scorrimento orizzontale */
             scroll-behavior: smooth; /* Scorrimento fluido */
             -ms-overflow-style: none; /* Nascondi la barra di scorrimento in IE e Edge */
             scrollbar-width: none; /* Nascondi la barra di scorrimento in Firefox */
