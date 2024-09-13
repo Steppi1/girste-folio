@@ -15,144 +15,123 @@
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #fff;
             line-height: 1.6;
         }
 
-        /* Header */
-        header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        /* Sezione Chi Sono */
-        .intro {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #fff;
-        }
-
-        .intro h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Sezione Portfolio */
-        .portfolio {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 80px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .portfolio-item {
-            width: 80%;
-            max-width: 800px;
-            margin-bottom: 40px;
+        /* Sezione principale */
+        .section {
+            padding: 20px 10px;
             text-align: center;
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-            background-color: #ccc;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-item h3 {
+        .section h1 {
             font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        .portfolio-item p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #fff;
+        .divider {
             border-top: 1px solid #ddd;
+            margin: 20px 0;
         }
 
-        footer p {
-            color: #666;
-            font-size: 1rem;
+        /* Slider */
+        .slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Styling for the 'archive' section */
+        .archive {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div>
-            <h1>Nome Cognome</h1>
-            <p>Graphic Designer | Web Developer</p>
+    <!-- Sezione 1 -->
+    <section class="section">
+        <h1>Prima Riga del Testo</h1>
+        <div class="divider"></div>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 1">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 2">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 3">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 4">
+            </div>
         </div>
-    </header>
-
-    <!-- Sezione Chi Sono -->
-    <section class="intro">
-        <h2>Chi Sono</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae gravida ipsum. Nulla facilisi. Donec vulputate urna eu nisi volutpat, non tempor nulla hendrerit.</p>
+        <div class="divider"></div>
     </section>
 
-    <!-- Sezione Portfolio -->
-    <section class="portfolio">
-        <!-- Progetto 1 -->
-        <div class="portfolio-item">
-            <img src="#" alt="Progetto 1" style="background-color: #7f8c8d;">
-            <h3>Progetto 1</h3>
-            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
+    <!-- Sezione 2 -->
+    <section class="section">
+        <h1>Prima Riga del Testo</h1>
+        <div class="divider"></div>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 1">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 2">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 3">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 4">
+            </div>
         </div>
-
-        <!-- Progetto 2 -->
-        <div class="portfolio-item">
-            <img src="#" alt="Progetto 2" style="background-color: #3498db;">
-            <h3>Progetto 2</h3>
-            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
-        </div>
-
-        <!-- Progetto 3 -->
-        <div class="portfolio-item">
-            <img src="#" alt="Progetto 3" style="background-color: #e74c3c;">
-            <h3>Progetto 3</h3>
-            <p>Descrizione del progetto. Lorem ipsum dolor sit amet.</p>
-        </div>
+        <div class="divider"></div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Nome Cognome. Tutti i diritti riservati.</p>
-    </footer>
+    <!-- Sezione 3 -->
+    <section class="section">
+        <h1>Prima Riga del Testo</h1>
+        <div class="divider"></div>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 1">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 2">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 3">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 4">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- Sezione 4 -->
+    <section class="section">
+        <h1>Prima Riga del Testo</h1>
+        <div class="divider"></div>
+        <div class="slider">
+            <div class="slider-wrapper">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 1">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 2">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 3">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine 4">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- Archivio -->
+    <div class="archive">
+        Archivio
+    </div>
 
 </body>
 </html>
