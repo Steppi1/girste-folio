@@ -16,34 +16,33 @@
             color: #333;
             background-color: #fff;
             line-height: 1.8;
-            overflow-y: scroll; /* Permette lo scroll della pagina */
+            overflow-y: scroll;
         }
 
         /* Nascondere la barra di scorrimento verticale */
         ::-webkit-scrollbar {
-            width: 0; /* Nascondere la scrollbar in Chrome, Safari e Opera */
+            width: 0;
         }
 
         body {
-            -ms-overflow-style: none; /* Nascondere la scrollbar in IE e Edge */
-            scrollbar-width: none; /* Nascondere la scrollbar in Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        /* Sezione principale */
         .section {
             padding: 0;
-            margin-bottom: 0px; /* Spazio tra sezioni */
+            margin-bottom: 0px;
         }
 
         .divider {
             border-top: 2px solid #000;
-            margin: 0px 0; /* Spazio ampio prima della barra successiva */
+            margin: 0px 0;
         }
 
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5px; /* Testo molto vicino alla barra */
+            margin-bottom: 5px;
         }
 
         .three-columns div {
@@ -51,7 +50,7 @@
             padding: 5px;
             box-sizing: border-box;
             font-size: 0.7rem;
-            margin-left: 8px; /* Margine a sinistra per il testo */
+            margin-left: 8px;
         }
 
         .image-text-container {
@@ -65,28 +64,27 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             cursor: grab;
-            white-space: nowrap; /* Mantiene le immagini attaccate */
+            white-space: nowrap;
         }
 
         .slider img {
             height: 600px;
             width: auto;
-            flex: 0 0 auto; /* Evita che le immagini si ridimensionino */
-            margin-right: 0; /* Rimuove lo spazio tra le immagini */
+            flex: 0 0 auto;
+            margin-right: 0;
         }
 
-        /* Adattamento delle immagini su mobile */
         @media (max-width: 768px) {
             .slider img {
-                height: 400px; /* Riduce l'altezza delle immagini su mobile */
-                width: auto;   /* Mantiene la proporzione dell'immagine */
+                height: 400px;
+                width: auto;
             }
         }
 
         @media (max-width: 480px) {
             .slider img {
-                height: 300px; /* Ulteriore riduzione dell'altezza su schermi più piccoli */
-                width: auto;   /* Mantiene la proporzione dell'immagine */
+                height: 300px;
+                width: auto;
             }
         }
 
@@ -99,7 +97,7 @@
             .top-bar div {
                 width: 100%;
                 text-align: left;
-                margin-bottom: 30px; /* Spazio sotto il testo dell'head su mobile */
+                margin-bottom: 30px;
             }
 
             .three-columns {
@@ -113,34 +111,39 @@
                 margin-bottom: 5px;
             }
         }
+
+        .archive-link {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Explore our unique design concepts and craftsmanship.</div>
+            <div>Innovative design solutions tailored to your needs and preferences.</div>
+            <div>Elevate your space with our curated collection of design pieces.</div>
         </div>
-       
         <div class="divider" style="margin-top: 88px;"></div>
     </section>
     
     <!-- SEZIONE 2 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</div>
+            <div>Transform your ideas into reality with our expert guidance.</div>
+            <div>Our team of professionals will bring your vision to life.</div>
+            <div>Discover the art of design with our bespoke services.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 4">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 5">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 6">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+4" alt="Immagine 4">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+5" alt="Immagine 5">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+6" alt="Immagine 6">
             </div>
         </div>
         <div class="divider"></div>
@@ -149,15 +152,15 @@
     <!-- SEZIONE 3 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Redefine your style with our exclusive design solutions.</div>
+            <div>Creating spaces that inspire and captivate.</div>
+            <div>Unleash the potential of your space with our innovative designs.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 7">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 8">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 9">
+                <img src="https://via.placeholder.com/1200x600?text=Immagine+7" alt="Immagine 7">
+                <img src="https://via.placeholder.com/800x600?text=Immagine+8" alt="Immagine 8">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+9" alt="Immagine 9">
             </div>
         </div>
         <div class="divider"></div>
@@ -166,15 +169,15 @@
     <!-- SEZIONE 4 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Immerse yourself in a world of sophisticated design.</div>
+            <div>Our creations are crafted to exceed your expectations.</div>
+            <div>Experience the essence of luxury with our exclusive collections.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 10">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 11">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 12">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+10" alt="Immagine 10">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+11" alt="Immagine 11">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+12" alt="Immagine 12">
             </div>
         </div>
         <div class="divider"></div>
@@ -183,15 +186,15 @@
     <!-- SEZIONE 5 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Discover design solutions that reflect your personality.</div>
+            <div>Tailored design services for a personalized touch.</div>
+            <div>Explore the future of design with our innovative approach.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 13">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 14">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 15">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+13" alt="Immagine 13">
+                <img src="https://via.placeholder.com/1200x600?text=Immagine+14" alt="Immagine 14">
+                <img src="https://via.placeholder.com/800x600?text=Immagine+15" alt="Immagine 15">
             </div>
         </div>
         <div class="divider"></div>
@@ -200,15 +203,15 @@
     <!-- SEZIONE 6 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Elevate your environment with our premium design services.</div>
+            <div>Crafting bespoke spaces with a focus on quality and innovation.</div>
+            <div>Join us in redefining the future of design.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 16">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 17">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 18">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+16" alt="Immagine 16">
+                <img src="https://via.placeholder.com/1200x600?text=Immagine+17" alt="Immagine 17">
+                <img src="https://via.placeholder.com/800x600?text=Immagine+18" alt="Immagine 18">
             </div>
         </div>
         <div class="divider"></div>
@@ -217,22 +220,27 @@
     <!-- SEZIONE 7 -->
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Transform your space with our innovative design solutions.</div>
+            <div>Our expert team delivers unparalleled quality and creativity.</div>
+            <div>Experience the difference with our custom design services.</div>
         </div>
         <div class="image-text-container">
             <div class="slider">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 19">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 20">
-                <img src="https://via.placeholder.com/1000x600" alt="Immagine 21">
+                <img src="https://via.placeholder.com/1000x600?text=Immagine+19" alt="Immagine 19">
+                <img src="https://via.placeholder.com/1200x600?text=Immagine+20" alt="Immagine 20">
+                <img src="https://via.placeholder.com/800x600?text=Immagine+21" alt="Immagine 21">
             </div>
         </div>
         <div class="divider"></div>
     </section>
 
+    <!-- Link all'archivio -->
+    <div class="archive-link">
+        <a href="https://example.com/archivio" target="_blank">Archivio</a>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const sliders = document.querySelectorAll('.slider');
             sliders.forEach(slider => {
                 let isMouseDown = false;
