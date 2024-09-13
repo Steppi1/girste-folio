@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>girste's</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
         * {
             margin: 0;
@@ -62,9 +59,16 @@
             margin-bottom: 70px;
         }
 
-        .slick-slide img {
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .slider img {
             height: 600px;
             width: auto;
+            flex: 0 0 auto; /* Evita che le immagini si ridimensionino */
         }
 
         @media (max-width: 768px) {
@@ -112,10 +116,10 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider multiple-items">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 4"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 5"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 6"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 4">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 5">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 6">
             </div>
         </div>
         <div class="divider"></div>
@@ -129,10 +133,10 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider responsive">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 7"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 8"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 9"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 7">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 8">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 9">
             </div>
         </div>
         <div class="divider"></div>
@@ -146,10 +150,10 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider variable-width">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 10"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 11"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 12"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 10">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 11">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 12">
             </div>
         </div>
         <div class="divider"></div>
@@ -163,10 +167,10 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider multiple-items">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 13"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 14"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 15"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 13">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 14">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 15">
             </div>
         </div>
         <div class="divider"></div>
@@ -180,10 +184,10 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider responsive">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 16"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 17"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 18"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 16">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 17">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 18">
             </div>
         </div>
         <div class="divider"></div>
@@ -197,64 +201,12 @@
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
         <div class="image-text-container">
-            <div class="slider variable-width">
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 19"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 20"></div>
-                <div><img src="https://via.placeholder.com/1000x600" alt="Immagine 21"></div>
+            <div class="slider">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 19">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 20">
+                <img src="https://via.placeholder.com/1000x600" alt="Immagine 21">
             </div>
         </div>
     </section>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.multiple-items').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-            
-            $('.responsive').slick({
-                dots: true,
-                infinite: false,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-
-            $('.variable-width').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                centerMode: true,
-                variableWidth: true
-            });
-        });
-    </script>
 </body>
 </html>
