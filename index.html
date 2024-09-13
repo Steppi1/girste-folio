@@ -52,7 +52,7 @@
 
         .slider {
             display: flex;
-            overflow-x: scroll; /* Permette lo scorrimento orizzontale */
+            overflow-x: auto; /* Permette lo scorrimento orizzontale */
             scroll-behavior: smooth; /* Scorrimento fluido */
             -ms-overflow-style: none; /* Nascondi la barra di scorrimento in IE e Edge */
             scrollbar-width: none; /* Nascondi la barra di scorrimento in Firefox */
@@ -89,7 +89,6 @@
             cursor: grabbing;
         }
 
-        /* Funzione per lo scorrimento con il mouse */
         .slider-wrapper {
             display: flex;
         }
@@ -129,7 +128,6 @@
                 text-align: left;
                 margin-bottom: 5px;
             }
-
         }
     </style>
 </head>
@@ -247,6 +245,61 @@
             <a href="#">Archivi</a>
         </div>
     </section>
+
+    <script>
+        // JavaScript per lo scorrimento delle immagini su desktop
+        const sliders = document.querySelectorAll('.slider');
+
+        sliders.forEach(slider => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Adjust scroll speed
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Scorrimento su dispositivi touch
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Adjust scroll speed
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
 
 </body>
 </html>
