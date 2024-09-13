@@ -25,6 +25,7 @@
             justify-content: space-between;
             padding: 10px;
             border-bottom: 2px solid #000;
+            margin-bottom: 40px; /* Spazio sotto il testo head */
         }
 
         .top-bar div {
@@ -36,17 +37,22 @@
         /* Sezione principale */
         .section {
             padding: 0;
+            margin-bottom: 40px; /* Spazio tra sezioni */
+        }
+
+        .section-text {
+            margin-top: 0px; /* Nessuno spazio sopra il testo */
         }
 
         .divider {
             border-top: 2px solid #000;
-            margin: 80px 0; /* Spazio ampio prima della barra */
+            margin: 30px 0; /* Spazio ampio prima della barra successiva */
         }
 
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px; /* Poco spazio tra il testo e le immagini */
+            margin-bottom: 10px; /* Testo molto vicino alla barra */
         }
 
         .three-columns div {
@@ -87,11 +93,6 @@
             width: auto;
         }
 
-        /* Spazio ampio sotto l'immagine */
-        .section img {
-            margin-bottom: 80px;
-        }
-
         /* Scorrimento delle immagini con il mouse */
         .slider {
             cursor: grab;
@@ -128,7 +129,7 @@
             .top-bar div {
                 width: 100%;
                 text-align: left;
-                margin-bottom: 30px;
+                margin-bottom: 30px; /* Spazio sotto il testo dell'head su mobile */
             }
 
             .three-columns {
@@ -157,11 +158,11 @@
         <div>Lorem ipsum dolor sit</div>
         <div>Lorem ipsum dolor sit</div>
     </div>
-    <div class="divider"></div> <!-- Ampio spazio prima della barra -->
+    <div class="divider"></div> <!-- Barra separatrice dopo l'head -->
 
     <!-- SEZIONE 1 -->
     <section class="section">
-        <div class="three-columns">
+        <div class="three-columns section-text">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
@@ -180,7 +181,7 @@
 
     <!-- SEZIONE 2 -->
     <section class="section">
-        <div class="three-columns">
+        <div class="three-columns section-text">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
@@ -199,7 +200,7 @@
 
     <!-- SEZIONE 3 -->
     <section class="section">
-        <div class="three-columns">
+        <div class="three-columns section-text">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
@@ -215,6 +216,65 @@
         </div>
         <div class="divider"></div>
     </section>
+
+    <!-- SEZIONE 4 -->
+    <section class="section">
+        <div class="three-columns section-text">
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <div class="slider-wrapper">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 10">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 11">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 12">
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- Archivio -->
+    <div class="archive">
+        <a href="https://example.com/archivio" target="_blank">Archivio</a>
+    </div>
+
+    <script>
+        const sliders = document.querySelectorAll('.slider');
+        
+        sliders.forEach(slider => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Velocità di scorrimento
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
 
 </body>
 </html>
