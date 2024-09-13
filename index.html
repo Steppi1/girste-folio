@@ -22,34 +22,25 @@
         /* Barra in alto */
         .top-bar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             padding: 10px;
             border-bottom: 2px solid #000;
-            margin-bottom: 20px; /* Spazio sotto il testo head */
+            margin-bottom: 30px; /* Spazio sotto il testo head */
         }
 
         .top-bar div {
-            width: 30%;
-            text-align: center;
             font-size: 0.7rem;
         }
 
         /* Sezione principale */
         .section {
             padding: 0;
-        }
-
-        .divider {
-            border-top: 2px solid #000;
-            margin: 0; /* Nessuno spazio sopra e sotto la barra di separazione */
+            margin-bottom: 40px; /* Spazio tra sezioni */
         }
 
         .section-text {
-            margin-bottom: 10px; /* Spazio sotto il testo */
-        }
-
-        .image-text-container {
-            margin-bottom: 30px; /* Spazio sotto l'immagine e sopra la barra */
+            font-size: 1rem;
+            margin-bottom: 5px; /* Poco spazio sopra lo slider */
         }
 
         .slider {
@@ -78,13 +69,13 @@
             width: auto;
         }
 
-        /* Scorrimento delle immagini con il mouse */
-        .slider {
-            cursor: grab;
+        .slider-container {
+            margin-bottom: 30px; /* Spazio sotto lo slider */
         }
 
-        .slider:active {
-            cursor: grabbing;
+        .divider {
+            border-top: 2px solid #000;
+            margin: 2px 0; /* Poco spazio sopra e sotto la barra */
         }
 
         .archive {
@@ -99,6 +90,24 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .top-bar div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 30px; /* Spazio sotto il testo dell'head su mobile */
+            }
+
+            .slider img {
+                height: auto;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -106,29 +115,28 @@
     <!-- Head -->
     <div class="top-bar">
         <div>Lorem ipsum dolor sit</div>
-        <div>Lorem ipsum dolor sit</div>
-        <div>Lorem ipsum dolor sit</div>
     </div>
-    <div class="divider"></div> <!-- Barra separatrice dopo l'head -->
 
-    <!-- SEZIONE -->
+    <!-- SEZIONE 1 -->
     <section class="section">
         <div class="section-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ultrices arcu.</p>
+            Lorem ipsum dolor sit amet.
         </div>
-        <div class="image-text-container">
+        <div class="slider-container">
             <div class="slider">
                 <div class="slider-wrapper">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 1">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 2">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 3">
                 </div>
             </div>
         </div>
-        <div class="divider"></div> <!-- Barra separatrice dopo l'immagine -->
+        <div class="divider"></div>
     </section>
 
     <!-- Archivio -->
     <div class="archive">
-        <p>Vai all'archivio: <a href="#">Archivio</a></p>
+        <a href="https://example.com/archivio" target="_blank">Archivio</a>
     </div>
 
 </body>
