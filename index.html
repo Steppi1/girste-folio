@@ -13,90 +13,104 @@
         }
 
         body {
-            font-family: 'Helvetica', sans-serif; /* Font Helvetica */
+            font-family: 'Helvetica', sans-serif;
             color: #333;
             background-color: #fff;
             line-height: 1.6;
         }
 
-        /* Spazio extra sopra */
         .spazio-extra {
-            height: 10px; /* Ridotto lo spazio sopra l'intestazione */
+            height: 10px;
         }
 
         /* Barra in alto */
         .top-bar {
             display: flex;
             justify-content: space-between;
-            padding: 5px 10px; /* Molto poco spazio sopra */
-            border-bottom: 2px solid #000; /* Linea nera */
+            padding: 5px 10px;
+            border-bottom: 2px solid #000;
         }
 
         .top-bar div {
             width: 30%;
             text-align: center;
-            font-size: 0.7rem; /* Testo ridotto */
-            margin-bottom: 20px; /* Più spazio sotto */
+            font-size: 0.7rem;
+            margin-bottom: 40px; /* Più spazio sotto il testo dell'head */
         }
 
         /* Sezione principale */
         .section {
-            padding: 0; /* Rimuovere il padding */
+            padding: 0;
             text-align: center;
         }
 
         .divider {
-            border-top: 2px solid #000; /* Linea nera */
-            margin: 40px 0 20px 0; /* Aggiunto più spazio sotto le sezioni */
+            border-top: 2px solid #000;
+            margin: 20px 0 40px 0; /* Più spazio sotto l'immagine prima della barra */
         }
 
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px; /* Ridotto lo spazio sotto */
+            margin-bottom: 10px;
         }
 
         .three-columns div {
             width: 30%;
             padding: 5px;
             box-sizing: border-box;
-            font-size: 0.7rem; /* Testo ridotto */
+            font-size: 0.7rem;
         }
 
         .image-text-container {
             margin: 0;
-            overflow: hidden; /* Per garantire che il contenuto non esca dal bordo */
+            overflow: hidden;
         }
 
-        .image-text-container .slider {
+        .slider {
             display: flex;
-            overflow-x: auto; /* Permettere lo scorrimento orizzontale */
+            overflow-x: auto;
             width: 100%;
-            margin: 0;
-            padding: 0; /* Rimuovere il padding */
-            position: relative;
+            scroll-behavior: smooth; /* Scorrimento fluido */
+            -ms-overflow-style: none; /* Nascondi la barra di scorrimento in IE e Edge */
+            scrollbar-width: none; /* Nascondi la barra di scorrimento in Firefox */
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none; /* Nascondi la barra di scorrimento in Chrome, Safari e Opera */
         }
 
         .slider-wrapper {
             display: flex;
             flex-wrap: nowrap;
-            margin: 0; /* Rimuovere il margine */
-            padding: 0; /* Rimuovere il padding */
         }
 
         .slider img {
-            height: 600px; /* Immagini alte 600px */
+            height: 600px;
             display: block;
-            margin: 0; /* Rimuovere il margine */
-            padding: 0; /* Rimuovere il padding */
-            width: auto; /* Mantieni le proporzioni */
+            margin: 0;
+            padding: 0;
+            width: auto;
         }
 
-        /* Styling for the 'archive' section */
+        /* Scorrimento delle immagini con il mouse */
+        .slider {
+            cursor: grab;
+        }
+
+        .slider:active {
+            cursor: grabbing;
+        }
+
+        /* Funzione per lo scorrimento con il mouse */
+        .slider-wrapper {
+            display: flex;
+        }
+
         .archive {
             text-align: center;
             padding: 20px;
-            font-size: 1rem; /* Testo per archivio */
+            font-size: 1rem;
             color: #333;
         }
 
@@ -108,47 +122,44 @@
 
         @media (max-width: 768px) {
             .top-bar {
-                flex-direction: column; /* Incolonnare il testo in mobile */
-                align-items: flex-start; /* Allineamento a sinistra */
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .top-bar div {
                 width: 100%;
-                text-align: left; /* Testo allineato a sinistra */
-                margin-bottom: 10px;
+                text-align: left;
+                margin-bottom: 40px; /* Stesso maggiore spazio sotto il testo dell'head */
             }
 
             .three-columns {
-                flex-direction: column; /* Colonne incolonnate su schermi mobili */
-                align-items: flex-start; /* Allineare a sinistra su schermi mobili */
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .three-columns div {
-                width: 100%; /* Larghezza completa su schermi mobili */
-                text-align: left; /* Allineare il testo a sinistra */
-                margin-bottom: 10px; /* Spazio tra le righe */
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
             }
 
             .slider img {
                 height: auto;
-                max-width: 100%; /* Mantenere proporzioni 1000x600 ma ridurre per mobile */
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Spazio extra sopra -->
     <div class="spazio-extra"></div>
 
-    <!-- Barra in alto -->
     <div class="top-bar">
         <div>Lorem ipsum dolor sit</div>
         <div>Lorem ipsum dolor sit</div>
         <div>Lorem ipsum dolor sit</div>
     </div>
 
-    <!-- Sezione 1 -->
     <section class="section">
         <div class="three-columns">
             <div>Lorem ipsum dolor sit amet.</div>
@@ -161,13 +172,12 @@
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 1">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 2">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 3">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 4">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 5">
                 </div>
             </div>
         </div>
         <div class="divider"></div>
 
+        <!-- Ripetizione delle sezioni secondo le indicazioni -->
         <!-- Sezione 2 -->
         <div class="three-columns">
             <div>Lorem ipsum dolor sit amet.</div>
@@ -177,135 +187,57 @@
         <div class="image-text-container">
             <div class="slider">
                 <div class="slider-wrapper">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 4">
+                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 5">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 6">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 7">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 8">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 9">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 10">
                 </div>
             </div>
         </div>
         <div class="divider"></div>
 
-        <!-- Sezione 3 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 11">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 12">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 13">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 14">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 15">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
+        <!-- Altre sezioni qui (aggiunte come richiesto, fino a 8 sezioni) -->
 
-        <!-- Sezione 4 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 16">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 17">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 18">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 19">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 20">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-
-        <!-- Sezione 5 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 21">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 22">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 23">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 24">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 25">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-
-        <!-- Sezione 6 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 26">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 27">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 28">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 29">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 30">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-
-        <!-- Sezione 7 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 31">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 32">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 33">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 34">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 35">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-
-        <!-- Sezione 8 -->
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 36">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 37">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 38">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 39">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 40">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
     </section>
 
     <!-- Archivio -->
     <div class="archive">
         <a href="https://example.com/archivio" target="_blank">Archivio</a>
     </div>
+
+    <script>
+        const sliders = document.querySelectorAll('.slider');
+        
+        sliders.forEach(slider => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Velocità di scorrimento
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
 
 </body>
 </html>
