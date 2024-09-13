@@ -65,13 +65,14 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             cursor: grab;
+            white-space: nowrap; /* Mantiene le immagini attaccate */
         }
 
         .slider img {
             height: 600px;
             width: auto;
             flex: 0 0 auto; /* Evita che le immagini si ridimensionino */
-            margin-right: -4px; /* Mantiene le immagini attaccate */
+            margin-right: 0; /* Rimuove lo spazio tra le immagini */
         }
 
         /* Adattamento delle immagini su mobile */
@@ -233,7 +234,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sliders = document.querySelectorAll('.slider');
-
             sliders.forEach(slider => {
                 let isMouseDown = false;
                 let startX;
