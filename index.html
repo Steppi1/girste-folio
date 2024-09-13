@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio Minimalista</title>
     <style>
-        /* Stile base per il layout */
         * {
             margin: 0;
             padding: 0;
@@ -16,12 +15,14 @@
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            background-color: #fff;
+            background-color: #f9f9f9;
+            line-height: 1.6;
         }
 
         /* Header */
         header {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -32,78 +33,79 @@
 
         header h1 {
             font-size: 4rem;
-            font-weight: normal;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
         }
 
         header p {
             font-size: 1.2rem;
-            margin-top: 10px;
             color: #666;
         }
 
-        /* Sezione principale */
-        section {
-            padding: 100px 20px;
+        /* Sezione Chi Sono */
+        .intro {
             text-align: center;
-            border-bottom: 1px solid #ccc;
+            padding: 80px 20px;
+            background-color: #fff;
         }
 
-        section h2 {
+        .intro h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
-        section p {
+        .intro p {
             font-size: 1.2rem;
             color: #666;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Griglia progetti */
+        /* Sezione Portfolio */
         .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 20px;
+            background-color: #f9f9f9;
         }
 
         .portfolio-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border: 1px solid #ddd;
-            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
         .portfolio-item img {
             width: 100%;
-            max-width: 400px;
             height: auto;
-            margin-bottom: 20px;
             background-color: #ccc;
+            margin-bottom: 20px;
         }
 
         .portfolio-item h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
         .portfolio-item p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #666;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background-color: #fff;
+            border-top: 1px solid #ddd;
         }
 
         footer p {
             color: #666;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -112,13 +114,13 @@
     <!-- Header -->
     <header>
         <div>
-            <h1>Il Mio Portfolio</h1>
+            <h1>Nome Cognome</h1>
             <p>Graphic Designer | Web Developer</p>
         </div>
     </header>
 
     <!-- Sezione Chi Sono -->
-    <section>
+    <section class="intro">
         <h2>Chi Sono</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae gravida ipsum. Nulla facilisi. Donec vulputate urna eu nisi volutpat, non tempor nulla hendrerit.</p>
     </section>
@@ -149,7 +151,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Il Mio Nome. Tutti i diritti riservati.</p>
+        <p>&copy; 2024 Nome Cognome. Tutti i diritti riservati.</p>
     </footer>
 
 </body>
