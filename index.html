@@ -35,7 +35,7 @@
         .top-bar div {
             width: 30%;
             text-align: center;
-            font-size: 0.8rem; /* Testo più piccolo */
+            font-size: 0.7rem; /* Testo ridotto */
         }
 
         /* Sezione principale */
@@ -45,7 +45,7 @@
         }
 
         .section h1 {
-            font-size: 1.5rem; /* Testo più piccolo */
+            font-size: 1.2rem; /* Testo ridotto */
             margin-bottom: 10px;
         }
 
@@ -64,7 +64,7 @@
             width: 30%;
             padding: 10px;
             box-sizing: border-box;
-            font-size: 0.8rem; /* Testo più piccolo */
+            font-size: 0.7rem; /* Testo ridotto */
         }
 
         .image-text-container {
@@ -89,10 +89,11 @@
         }
 
         .slider img {
-            height: 500px; /* Ridotto per dimensioni più piccole */
+            height: 400px; /* Immagini ridotte */
             display: block;
             margin: 0; /* Rimuovere il margine */
             padding: 0; /* Rimuovere il padding */
+            width: auto; /* Mantieni le proporzioni */
         }
 
         /* Styling for the 'archive' section */
@@ -110,16 +111,18 @@
         }
 
         @media (max-width: 768px) {
-            .top-bar div, .section h1, .three-columns div {
-                font-size: 0.7rem; /* Testo più piccolo su schermi mobili */
+            .three-columns {
+                flex-direction: column; /* Colonne incolonnate su schermi mobili */
+                align-items: center;
+            }
+
+            .three-columns div {
+                width: 100%; /* Larghezza completa su schermi mobili */
+                text-align: center;
             }
 
             .slider img {
-                height: 400px; /* Ancora più piccolo su schermi mobili */
-            }
-
-            .archive {
-                font-size: 0.9rem; /* Testo per archivio su schermi mobili */
+                height: 300px; /* Ancora più piccolo su schermi mobili */
             }
         }
     </style>
@@ -148,11 +151,11 @@
         <div class="image-text-container">
             <div class="slider">
                 <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 1">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 2">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 3">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 4">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 5">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 1">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 2">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 3">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 4">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 5">
                 </div>
             </div>
         </div>
@@ -165,11 +168,11 @@
         <div class="image-text-container">
             <div class="slider">
                 <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 6">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 7">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 8">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 9">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 10">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 6">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 7">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 8">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 9">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 10">
                 </div>
             </div>
         </div>
@@ -187,11 +190,11 @@
         <div class="image-text-container">
             <div class="slider">
                 <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 11">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 12">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 13">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 14">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 15">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 11">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 12">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 13">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 14">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 15">
                 </div>
             </div>
         </div>
@@ -204,11 +207,11 @@
         <div class="image-text-container">
             <div class="slider">
                 <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 16">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 17">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 18">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 19">
-                    <img src="https://via.placeholder.com/1000x500" alt="Immagine 20">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 16">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 17">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 18">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 19">
+                    <img src="https://via.placeholder.com/1000x400" alt="Immagine 20">
                 </div>
             </div>
         </div>
