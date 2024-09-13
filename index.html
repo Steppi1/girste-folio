@@ -24,7 +24,8 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            margin-bottom: 40px; /* Spazio ampio sotto il testo head */
+            border-bottom: 2px solid #000;
+            margin-bottom: 30px; /* Spazio sotto il testo head */
         }
 
         .top-bar div {
@@ -33,21 +34,21 @@
             font-size: 0.7rem;
         }
 
-        .divider {
-            border-top: 2px solid #000;
-            margin: 40px 0; /* Spazio ampio prima della barra */
-        }
-
         /* Sezione principale */
         .section {
             padding: 0;
-            margin-bottom: 40px; /* Spazio tra sezioni */
+            margin-bottom: 100px; /* Spazio tra immagini e barra */
+        }
+
+        .divider {
+            border-top: 2px solid #000;
+            margin: 100px 0; /* Spazio ampio prima della barra successiva */
         }
 
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px; /* Spazio tra testo e immagini */
+            margin-bottom: 5px; /* Spazio ridotto tra testo e immagini */
         }
 
         .three-columns div {
@@ -95,6 +96,11 @@
 
         .slider:active {
             cursor: grabbing;
+        }
+
+        /* Funzione per lo scorrimento con il mouse */
+        .slider-wrapper {
+            display: flex;
         }
 
         .archive {
@@ -166,7 +172,7 @@
                 </div>
             </div>
         </div>
-        <div class="divider"></div> <!-- Spazio prima della prossima barra -->
+        <div class="divider"></div> <!-- Spazio ampio prima della prossima barra -->
     </section>
 
     <!-- SEZIONE 2 -->
@@ -201,82 +207,6 @@
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 7">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 8">
                     <img src="https://via.placeholder.com/1000x600" alt="Immagine 9">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-    </section>
-
-    <!-- SEZIONE 4 -->
-    <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 10">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 11">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 12">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-    </section>
-
-    <!-- SEZIONE 5 -->
-    <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 13">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 14">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 15">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-    </section>
-
-    <!-- SEZIONE 6 -->
-    <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 16">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 17">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 18">
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-    </section>
-
-    <!-- SEZIONE 7 -->
-    <section class="section">
-        <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-            <div>Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="image-text-container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 19">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 20">
-                    <img src="https://via.placeholder.com/1000x600" alt="Immagine 21">
                 </div>
             </div>
         </div>
