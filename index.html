@@ -71,6 +71,21 @@
             flex: 0 0 auto; /* Evita che le immagini si ridimensionino */
         }
 
+        /* Adattamento delle immagini su mobile */
+        @media (max-width: 768px) {
+            .slider img {
+                height: 400px; /* Riduce l'altezza delle immagini su mobile */
+                width: auto;   /* Mantiene la proporzione dell'immagine */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider img {
+                height: 300px; /* Ulteriore riduzione dell'altezza su schermi più piccoli */
+                width: auto;   /* Mantiene la proporzione dell'immagine */
+            }
+        }
+
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -100,15 +115,12 @@
 
     <section class="section">
         <div class="three-columns">
-            <div>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet.</div>
+            <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
        
-        <div class="divider" style="margin-top: 88px;"></div>
+        <div class="divider" style="margin-top: 70px;"></div>
     </section>
     
     <!-- SEZIONE 2 -->
