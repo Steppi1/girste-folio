@@ -39,7 +39,7 @@
 
         /* Sezione principale */
         .section {
-            padding: 20px 10px;
+            padding: 0; /* Rimuovere il padding */
             text-align: center;
         }
 
@@ -66,29 +66,31 @@
         }
 
         .image-text-container {
-            margin: 20px 0;
+            margin: 0;
             overflow: hidden; /* Per garantire che il contenuto non esca dal bordo */
         }
 
         .image-text-container .slider {
             display: flex;
-            overflow: hidden;
+            overflow-x: auto; /* Permettere lo scorrimento orizzontale */
             width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0; /* Rimuovere il padding */
             position: relative;
         }
 
         .slider-wrapper {
             display: flex;
-            white-space: nowrap;
-            margin-left: 0; /* Allinea al bordo sinistro */
+            flex-wrap: nowrap;
+            margin: 0; /* Rimuovere il margine */
+            padding: 0; /* Rimuovere il padding */
         }
 
         .slider img {
             height: 600px;
-            display: inline-block;
-            margin: 0;
+            display: block;
+            margin: 0; /* Rimuovere il margine */
+            padding: 0; /* Rimuovere il padding */
         }
 
         /* Styling for the 'archive' section */
