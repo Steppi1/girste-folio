@@ -17,6 +17,7 @@
             color: #333;
             background-color: #fff;
             line-height: 1.8;
+            overflow-y: hidden; /* Nascondi la barra di scorrimento verticale su tutta la pagina */
         }
 
         /* Sezione principale */
@@ -56,6 +57,11 @@
             scroll-behavior: smooth; /* Scorrimento fluido */
             -ms-overflow-style: none; /* Nascondi la barra di scorrimento in IE e Edge */
             scrollbar-width: none; /* Nascondi la barra di scorrimento in Firefox */
+            cursor: grab;
+        }
+
+        .slider:active {
+            cursor: grabbing;
         }
 
         .slider::-webkit-scrollbar {
@@ -125,21 +131,19 @@
                 margin-bottom: 5px;
             }
 
-          
         }
     </style>
 </head>
 <body>
 
-
-     <section class="section">
+    <section class="section">
         <div class="three-columns">
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
             <div>Lorem ipsum dolor sit amet.</div>
         </div>
        
-        <div class="divider" style="margin-top: 70px;></div>
+        <div class="divider" style="margin-top: 70px;"></div>
     </section>
     
 
