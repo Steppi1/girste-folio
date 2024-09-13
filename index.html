@@ -25,7 +25,6 @@
             justify-content: space-between;
             padding: 10px;
             border-bottom: 2px solid #000;
-            margin-bottom: 30px; /* Spazio sotto il testo head */
         }
 
         .top-bar div {
@@ -37,18 +36,17 @@
         /* Sezione principale */
         .section {
             padding: 0;
-            margin-bottom: 100px; /* Spazio tra immagini e barra */
         }
 
         .divider {
             border-top: 2px solid #000;
-            margin: 100px 0; /* Spazio ampio prima della barra successiva */
+            margin: 80px 0; /* Spazio ampio prima della barra */
         }
 
         .three-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5px; /* Spazio ridotto tra testo e immagini */
+            margin-bottom: 10px; /* Poco spazio tra il testo e le immagini */
         }
 
         .three-columns div {
@@ -89,6 +87,11 @@
             width: auto;
         }
 
+        /* Spazio ampio sotto l'immagine */
+        .section img {
+            margin-bottom: 80px;
+        }
+
         /* Scorrimento delle immagini con il mouse */
         .slider {
             cursor: grab;
@@ -125,7 +128,7 @@
             .top-bar div {
                 width: 100%;
                 text-align: left;
-                margin-bottom: 30px; /* Spazio sotto il testo dell'head su mobile */
+                margin-bottom: 30px;
             }
 
             .three-columns {
@@ -154,7 +157,7 @@
         <div>Lorem ipsum dolor sit</div>
         <div>Lorem ipsum dolor sit</div>
     </div>
-    <div class="divider"></div> <!-- Barra separatrice dopo l'head -->
+    <div class="divider"></div> <!-- Ampio spazio prima della barra -->
 
     <!-- SEZIONE 1 -->
     <section class="section">
