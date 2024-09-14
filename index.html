@@ -16,7 +16,6 @@
             color: #333;
             background-color: #fff;
             line-height: 1.8;
-            overflow-y: scroll;
         }
 
         /* Nascondere la barra di scorrimento verticale */
@@ -30,13 +29,12 @@
         }
 
         .section {
-            padding: 0;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
 
         .divider {
             border-top: 2px solid #000;
-            margin: 0px 0;
+            margin: 0;
         }
 
         .three-columns {
@@ -48,14 +46,11 @@
         .three-columns div {
             width: 30%;
             padding: 5px;
-            box-sizing: border-box;
             font-size: 0.7rem;
             margin-left: 8px;
         }
 
         .image-text-container {
-            margin: 0;
-            overflow: hidden;
             margin-bottom: 70px;
         }
 
@@ -70,46 +65,24 @@
         .slider img {
             height: 600px;
             width: auto;
-            flex: 0 0 auto;
-            margin-right: 0;
         }
 
         @media (max-width: 768px) {
             .slider img {
                 height: 400px;
-                width: auto;
             }
         }
 
         @media (max-width: 480px) {
             .slider img {
                 height: 300px;
-                width: auto;
             }
         }
 
-        @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .top-bar div {
-                width: 100%;
-                text-align: left;
-                margin-bottom: 30px;
-            }
-
-            .three-columns {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .three-columns div {
-                width: 100%;
-                text-align: left;
-                margin-bottom: 5px;
-            }
+        .archive-link {
+            text-align: right;
+            margin: 30px 10px;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -175,7 +148,7 @@
         <div class="divider"></div>
     </section>
 
-    <!-- Arkive Link moved here -->
+    <!-- Arkive Link -->
     <div class="archive-link">
         Arkive
     </div>
@@ -190,19 +163,16 @@
 
                 slider.addEventListener('mousedown', (e) => {
                     isMouseDown = true;
-                    slider.classList.add('active');
                     startX = e.pageX - slider.offsetLeft;
                     scrollLeft = slider.scrollLeft;
                 });
 
                 slider.addEventListener('mouseleave', () => {
                     isMouseDown = false;
-                    slider.classList.remove('active');
                 });
 
                 slider.addEventListener('mouseup', () => {
                     isMouseDown = false;
-                    slider.classList.remove('active');
                 });
 
                 slider.addEventListener('mousemove', (e) => {
