@@ -18,16 +18,6 @@
             line-height: 1.8;
         }
 
-        /* Nascondere la barra di scorrimento verticale */
-        ::-webkit-scrollbar {
-            width: 0;
-        }
-
-        body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
         .section {
             margin-bottom: 0;
         }
@@ -58,8 +48,7 @@
             display: flex;
             overflow-x: auto;
             white-space: nowrap;
-            scroll-behavior: smooth; /* Scroll fluido su desktop */
-            -webkit-overflow-scrolling: touch; /* Scroll inerziale su mobile */
+            scroll-behavior: smooth; /* Scroll fluido */
             position: relative; /* Necessario per nascondere la scrollbar */
         }
 
@@ -84,7 +73,6 @@
                 height: 350px;
             }
 
-            /* Testi su mobile in singola colonna */
             .three-columns {
                 flex-direction: column;
                 align-items: flex-start;
@@ -97,6 +85,7 @@
             }
 
             .slider {
+                -webkit-overflow-scrolling: touch; /* Scroll inerziale su mobile */
                 scrollbar-width: none; /* Nascondere la barra di scorrimento su mobile */
             }
 
@@ -177,7 +166,6 @@
                 <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+9" alt="Immagine Placeholder 9">
             </div>
         </div>
-    
     </section>
 
     <!-- Arkive Link -->
