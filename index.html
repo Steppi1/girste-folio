@@ -172,7 +172,9 @@
         Arkive
     </div>
 
-   <script>
+
+    
+ <script>
     document.addEventListener('DOMContentLoaded', () => {
         const sliders = document.querySelectorAll('.slider');
         sliders.forEach(slider => {
@@ -180,30 +182,30 @@
             let startX;
             let scrollLeft;
 
-            // Funzione per gestire il rilascio del mouse/touch
-            const end = () => {
-                isDown = false;
-                slider.classList.remove('active');
-                slider.style.cursor = 'grab'; // Ripristina il cursore
-            };
-
-            // Funzione per gestire l'inizio del trascinamento
+            // Funzione per l'inizio del trascinamento
             const start = (e) => {
                 isDown = true;
                 slider.classList.add('active');
+                // Determina se l'evento è un tocco o un click
                 startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
                 scrollLeft = slider.scrollLeft;
-                slider.style.cursor = 'grabbing'; // Feedback visivo per il cursore
+                slider.style.cursor = 'grabbing';
             };
 
-            // Funzione per gestire il movimento durante il trascinamento
+            // Funzione per il movimento durante il trascinamento
             const move = (e) => {
-                if (!isDown) return; // Se non è premuto, non fare nulla
-                e.preventDefault(); // Evita comportamenti predefiniti come la selezione di testo
-
+                if (!isDown) return; // Se non stiamo trascinando, esci
+                e.preventDefault(); // Evita comportamenti predefiniti
                 const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
-                const dist = (x - startX) * 2; // Velocità dello scroll
+                const dist = (x - startX) * 2; // Regola la velocità dello scroll
                 slider.scrollLeft = scrollLeft - dist;
+            };
+
+            // Funzione per terminare il trascinamento
+            const end = () => {
+                isDown = false;
+                slider.classList.remove('active');
+                slider.style.cursor = 'grab';
             };
 
             // Eventi per mouse
@@ -220,6 +222,8 @@
     });
 </script>
 
+
+    
     
 </body>
 </html>
