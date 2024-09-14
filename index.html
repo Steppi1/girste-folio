@@ -48,7 +48,7 @@
             display: flex;
             overflow-x: scroll;
             white-space: nowrap;
-            scroll-behavior: auto; /* Nessun comportamento automatico */
+            scroll-behavior: smooth; /* Aggiunto per una transizione più fluida */
             -webkit-overflow-scrolling: touch; /* Scroll fluido su mobile */
             position: relative; /* Necessario per nascondere la scrollbar */
         }
@@ -58,7 +58,7 @@
             width: auto;
             user-drag: none; /* Disabilita il drag dell'immagine */
             user-select: none; /* Impedisce la selezione dell'immagine */
-            pointer-events: none; /* Disabilita drag delle immagini */
+            pointer-events: none; /* Disabilita il drag delle immagini */
         }
 
         /* Immagini più grandi su desktop */
@@ -223,8 +223,8 @@
 
                 slider.addEventListener('touchmove', (e) => {
                     const touchX = e.touches[0].pageX - slider.offsetLeft;
-                    const walk = (touchX - touchStartX) * 2; // Velocità dello scroll
-                    slider.scrollLeft = touchScrollLeft - walk;
+                    const moveX = touchX - touchStartX;
+                    slider.scrollLeft = touchScrollLeft - moveX;
                 });
             });
         });
