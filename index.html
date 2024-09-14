@@ -58,7 +58,9 @@
             display: flex;
             overflow-x: auto;
             white-space: nowrap;
-            -webkit-overflow-scrolling: touch; /* Migliora lo scroll su mobile */
+            scroll-behavior: smooth; /* Scroll fluido su desktop */
+            -webkit-overflow-scrolling: touch; /* Scroll inerziale su mobile */
+            position: relative; /* Necessario per nascondere la scrollbar */
         }
 
         .slider img {
@@ -76,6 +78,7 @@
             }
         }
 
+        /* Nascondere la scrollbar su mobile */
         @media (max-width: 768px) {
             .slider img {
                 height: 350px;
@@ -91,6 +94,14 @@
                 width: 100%;
                 text-align: left;
                 margin-left: 0;
+            }
+
+            .slider {
+                scrollbar-width: none; /* Nascondere la barra di scorrimento su mobile */
+            }
+
+            .slider::-webkit-scrollbar {
+                display: none; /* Nascondere la scrollbar per browser che usano WebKit */
             }
         }
 
@@ -223,8 +234,8 @@
                 });
 
                 slider.addEventListener('touchmove', (e) => {
-                    const x = e.touches[0].pageX - slider.offsetLeft;
-                    const walk = (x - touchStartX) * 2; // Velocità dello scroll
+                    const touchX = e.touches[0].pageX - slider.offsetLeft;
+                    const walk = (touchX - touchStartX) * 2; // Velocità dello scroll
                     slider.scrollLeft = touchScrollLeft - walk;
                 });
             });
