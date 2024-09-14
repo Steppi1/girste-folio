@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide Example</title>
+    <title>girste's</title>
     <style>
         * {
             margin: 0;
@@ -18,100 +18,208 @@
             line-height: 1.8;
         }
 
-        .wrapper {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .items {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            cursor: grab;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .item {
-            flex: 0 0 auto;
-            width: 100px;
-            height: 100px;
-            background-color: #ddd;
-            margin-right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-        }
-
-        /* Hide scrollbar */
-        .items::-webkit-scrollbar {
-            display: none;
+        /* Nascondere la barra di scorrimento verticale */
+        ::-webkit-scrollbar {
+            width: 0;
         }
 
         body {
-            -ms-overflow-style: none;  /* Internet Explorer and Edge */
-            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .section {
+            margin-bottom: 0;
+        }
+
+        .divider {
+            border-top: 2px solid #000;
+            margin: 0;
+        }
+
+        .three-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .three-columns div {
+            width: 30%;
+            padding: 5px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+        }
+
+        .image-text-container {
+            margin-bottom: 70px;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch; /* Migliora lo scroll su mobile */
+        }
+
+        .slider img {
+            height: 650px;
+            width: auto;
+        }
+
+        /* Immagini più grandi su desktop */
+        @media (min-width: 1200px) {
+            .slider img {
+                height: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider img {
+                height: 350px;
+            }
+
+            /* Testi su mobile in singola colonna */
+            .three-columns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .three-columns div {
+                width: 100%;
+                text-align: left;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider img {
+                height: 300px;
+            }
+        }
+
+        .archive-link {
+            text-align: right;
+            margin: 30px 10px;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Slide</h1>
-        <div class="wrapper">
-            <ul class="items">
-                <li class="item">0</li>
-                <li class="item">1</li>
-                <li class="item">2</li>
-                <li class="item">3</li>
-                <li class="item">4</li>
-                <li class="item">5</li>
-                <li class="item">6</li>
-                <li class="item">7</li>
-                <li class="item">8</li>
-                <li class="item">9</li>
-            </ul>
+    <!-- SEZIONE 1 -->
+    <section class="section">
+        <div class="three-columns">
+            <div>Discover the beauty of bespoke design, crafted to perfection.</div>
+            <div>Explore innovative solutions that elevate your space to new heights.</div>
+            <div>Our curated selection of design pieces will transform your environment.</div>
         </div>
-    </main>
+        <div class="divider" style="margin-top: 96px;"></div>
+    </section>
+    
+    <!-- SEZIONE 2 -->
+    <section class="section">
+        <div class="three-columns">
+            <div>Transform your ideas into reality with our expert design services. Our skilled designers are dedicated to crafting unique solutions that cater to your specific needs.</div>
+            <div>Our team of professionals will bring your vision to life with precision. We specialize in creating tailored designs that seamlessly blend form and function.</div>
+            <div>Experience the art of design with our tailored solutions for every need. From conceptualization to execution, we are committed to delivering exceptional results.</div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+1" alt="Immagine Placeholder 1">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+2" alt="Immagine Placeholder 2">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+3" alt="Immagine Placeholder 3">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- SEZIONE 3 -->
+    <section class="section">
+        <div class="three-columns">
+            <div>Redefine your space with our cutting-edge design solutions. Our innovative approach ensures that your design is both functional and aesthetically pleasing.</div>
+            <div>We offer a range of services to meet your unique design needs. From graphic design to interior decor, we have the expertise to bring your vision to life.</div>
+            <div>Explore our collection to find the perfect fit for your environment. Our diverse range of products and services is designed to cater to every style and preference.</div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+4" alt="Immagine Placeholder 4">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+5" alt="Immagine Placeholder 5">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+6" alt="Immagine Placeholder 6">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- SEZIONE 4 -->
+    <section class="section">
+        <div class="three-columns">
+            <div>Immerse yourself in the world of sophisticated design. Our projects combine creativity and functionality to create stunning results.</div>
+            <div>Our design solutions are crafted to meet the highest standards. We prioritize quality and innovation in every aspect of our work.</div>
+            <div>Experience luxury and innovation with our exclusive offerings. Our designs are tailored to offer a unique and immersive experience.</div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+7" alt="Immagine Placeholder 7">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+8" alt="Immagine Placeholder 8">
+                <img src="https://via.placeholder.com/1080x600?text=Placeholder+Image+9" alt="Immagine Placeholder 9">
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- Arkive Link -->
+    <div class="archive-link">
+        Arkive
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.querySelector('.items');
-            let isDown = false;
-            let startX;
-            let scrollLeft;
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                let isMouseDown = false;
+                let startX;
+                let scrollLeft;
 
-            const start = (e) => {
-                isDown = true;
-                slider.classList.add('active');
-                startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-                slider.style.cursor = 'grabbing';
-            };
+                slider.addEventListener('mousedown', (e) => {
+                    isMouseDown = true;
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                    slider.style.cursor = 'grabbing'; // Aggiunge feedback visivo
+                });
 
-            const move = (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
-                const dist = (x - startX) * 2; // Scroll speed
-                slider.scrollLeft = scrollLeft - dist;
-            };
+                slider.addEventListener('mouseleave', () => {
+                    isMouseDown = false;
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
+                });
 
-            const end = () => {
-                isDown = false;
-                slider.classList.remove('active');
-                slider.style.cursor = 'grab';
-            };
+                slider.addEventListener('mouseup', () => {
+                    isMouseDown = false;
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
+                });
 
-            slider.addEventListener('mousedown', start);
-            slider.addEventListener('mousemove', move);
-            slider.addEventListener('mouseup', end);
-            slider.addEventListener('mouseleave', end);
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isMouseDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2; // Velocità dello scroll
+                    slider.scrollLeft = scrollLeft - walk;
+                });
 
-            slider.addEventListener('touchstart', start);
-            slider.addEventListener('touchmove', move);
-            slider.addEventListener('touchend', end);
+                // Aggiunta dello scroll tramite tocco per i dispositivi touch
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+
+                slider.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].pageX - slider.offsetLeft;
+                    touchScrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('touchmove', (e) => {
+                    const x = e.touches[0].pageX - slider.offsetLeft;
+                    const walk = (x - touchStartX) * 2; // Velocità dello scroll
+                    slider.scrollLeft = touchScrollLeft - walk;
+                });
+            });
         });
     </script>
 </body>
