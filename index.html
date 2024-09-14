@@ -63,13 +63,32 @@
         }
 
         .slider img {
-            height: 600px;
+            height: 650px;
             width: auto;
+        }
+
+        /* Immagini più grandi su desktop */
+        @media (min-width: 1200px) {
+            .slider img {
+                height: 700px;
+            }
         }
 
         @media (max-width: 768px) {
             .slider img {
-                height: 400px;
+                height: 350px;
+            }
+
+            /* Testi su mobile in singola colonna */
+            .three-columns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .three-columns div {
+                width: 100%;
+                text-align: left;
+                margin-left: 0;
             }
         }
 
