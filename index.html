@@ -5,7 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>girste's</title>
     <style>
-        /* Stili CSS qui */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Nascondere la barra di scorrimento verticale */
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .section {
+            margin-bottom: 0;
+        }
+
+        .divider {
+            border-top: 2px solid #000;
+            margin: 0;
+        }
+
+        .three-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .three-columns div {
+            width: 30%;
+            padding: 5px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+        }
+
+        .image-text-container {
+            margin-bottom: 70px;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch; /* Migliora lo scroll su mobile */
+        }
+
+        .slider img {
+            height: 650px;
+            width: auto;
+        }
+
+        /* Immagini più grandi su desktop */
+        @media (min-width: 1200px) {
+            .slider img {
+                height: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider img {
+                height: 350px;
+            }
+
+            /* Testi su mobile in singola colonna */
+            .three-columns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .three-columns div {
+                width: 100%;
+                text-align: left;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider img {
+                height: 300px;
+            }
+        }
+
+        .archive-link {
+            text-align: right;
+            margin: 30px 10px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -78,55 +175,50 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const sliders = document.querySelectorAll('.slider');
-            
             sliders.forEach(slider => {
                 let isMouseDown = false;
                 let startX;
                 let scrollLeft;
-                
-                const onMouseDown = (e) => {
+
+                slider.addEventListener('mousedown', (e) => {
                     isMouseDown = true;
                     startX = e.pageX - slider.offsetLeft;
                     scrollLeft = slider.scrollLeft;
-                    slider.style.cursor = 'grabbing';
-                };
-                
-                const onMouseLeave = () => {
+                    slider.style.cursor = 'grabbing'; // Aggiunge feedback visivo
+                });
+
+                slider.addEventListener('mouseleave', () => {
                     isMouseDown = false;
-                    slider.style.cursor = 'grab';
-                };
-                
-                const onMouseUp = () => {
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
+                });
+
+                slider.addEventListener('mouseup', () => {
                     isMouseDown = false;
-                    slider.style.cursor = 'grab';
-                };
-                
-                const onMouseMove = (e) => {
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
+                });
+
+                slider.addEventListener('mousemove', (e) => {
                     if (!isMouseDown) return;
                     e.preventDefault();
                     const x = e.pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 2;
+                    const walk = (x - startX) * 2; // Velocità dello scroll
                     slider.scrollLeft = scrollLeft - walk;
-                };
-                
-                const onTouchStart = (e) => {
-                    startX = e.touches[0].pageX - slider.offsetLeft;
-                    scrollLeft = slider.scrollLeft;
-                };
-                
-                const onTouchMove = (e) => {
+                });
+
+                // Aggiunta dello scroll tramite tocco per i dispositivi touch
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+
+                slider.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].pageX - slider.offsetLeft;
+                    touchScrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('touchmove', (e) => {
                     const x = e.touches[0].pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 2;
-                    slider.scrollLeft = scrollLeft - walk;
-                };
-
-                slider.addEventListener('mousedown', onMouseDown);
-                slider.addEventListener('mouseleave', onMouseLeave);
-                slider.addEventListener('mouseup', onMouseUp);
-                slider.addEventListener('mousemove', onMouseMove);
-
-                slider.addEventListener('touchstart', onTouchStart);
-                slider.addEventListener('touchmove', onTouchMove);
+                    const walk = (x - touchStartX) * 2; // Velocità dello scroll
+                    slider.scrollLeft = touchScrollLeft - walk;
+                });
             });
         });
     </script>
