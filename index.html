@@ -46,9 +46,10 @@
 
         .slider {
             display: flex;
-            overflow-x: auto;
+            overflow-x: scroll;
             white-space: nowrap;
-            scroll-behavior: smooth; /* Scroll fluido */
+            scroll-behavior: auto; /* Nessun comportamento automatico */
+            -webkit-overflow-scrolling: touch; /* Scroll fluido su mobile */
             position: relative; /* Necessario per nascondere la scrollbar */
         }
 
@@ -57,7 +58,7 @@
             width: auto;
             user-drag: none; /* Disabilita il drag dell'immagine */
             user-select: none; /* Impedisce la selezione dell'immagine */
-            pointer-events: none; /* Rimuove la possibilità di fare click e drag sull'immagine */
+            pointer-events: none; /* Disabilita drag delle immagini */
         }
 
         /* Immagini più grandi su desktop */
@@ -67,7 +68,15 @@
             }
         }
 
-        /* Nascondere la scrollbar su mobile */
+        /* Nascondere la scrollbar su mobile e desktop */
+        .slider {
+            scrollbar-width: none; /* Nasconde la scrollbar per Firefox */
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none; /* Nasconde la scrollbar per browser WebKit */
+        }
+
         @media (max-width: 768px) {
             .slider img {
                 height: 350px;
@@ -82,15 +91,6 @@
                 width: 100%;
                 text-align: left;
                 margin-left: 0;
-            }
-
-            .slider {
-                -webkit-overflow-scrolling: touch; /* Scroll inerziale su mobile */
-                scrollbar-width: none; /* Nascondere la barra di scorrimento su mobile */
-            }
-
-            .slider::-webkit-scrollbar {
-                display: none; /* Nascondere la scrollbar per browser che usano WebKit */
             }
         }
 
@@ -185,7 +185,7 @@
                     isMouseDown = true;
                     startX = e.pageX - slider.offsetLeft;
                     scrollLeft = slider.scrollLeft;
-                    slider.style.cursor = 'grabbing'; // Aggiunge feedback visivo
+                    slider.style.cursor = 'grabbing'; // Feedback visivo
                 });
 
                 slider.addEventListener('mouseleave', () => {
@@ -206,7 +206,7 @@
                     slider.scrollLeft = scrollLeft - walk;
                 });
 
-                // Disabilita il drag-and-drop delle immagini
+                // Disabilita il drag delle immagini
                 const imgs = slider.querySelectorAll('img');
                 imgs.forEach(img => {
                     img.addEventListener('dragstart', (e) => e.preventDefault());
