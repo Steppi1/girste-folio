@@ -58,8 +58,8 @@
             display: flex;
             overflow-x: auto;
             scroll-behavior: smooth;
-            cursor: grab;
             white-space: nowrap;
+            -webkit-overflow-scrolling: touch; /* Migliora lo scroll su mobile */
         }
 
         .slider img {
@@ -184,22 +184,40 @@
                     isMouseDown = true;
                     startX = e.pageX - slider.offsetLeft;
                     scrollLeft = slider.scrollLeft;
+                    slider.style.cursor = 'grabbing'; // Aggiunge feedback visivo
                 });
 
                 slider.addEventListener('mouseleave', () => {
                     isMouseDown = false;
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
                 });
 
                 slider.addEventListener('mouseup', () => {
                     isMouseDown = false;
+                    slider.style.cursor = 'grab'; // Ripristina il cursore
                 });
 
                 slider.addEventListener('mousemove', (e) => {
                     if (!isMouseDown) return;
                     e.preventDefault();
                     const x = e.pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 2; // Scroll speed
+                    const walk = (x - startX) * 2; // Velocità dello scroll
                     slider.scrollLeft = scrollLeft - walk;
+                });
+
+                // Aggiunta dello scroll tramite tocco per i dispositivi touch
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+
+                slider.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].pageX - slider.offsetLeft;
+                    touchScrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('touchmove', (e) => {
+                    const x = e.touches[0].pageX - slider.offsetLeft;
+                    const walk = (x - touchStartX) * 2; // Velocità dello scroll
+                    slider.scrollLeft = touchScrollLeft - walk;
                 });
             });
         });
