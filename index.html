@@ -64,6 +64,9 @@
         .slider img {
             height: 650px;
             width: auto;
+            user-drag: none; /* Disabilita il drag dell'immagine */
+            user-select: none; /* Impedisce la selezione dell'immagine */
+            pointer-events: none; /* Rimuove la possibilità di fare click e drag sull'immagine */
         }
 
         /* Immagini più grandi su desktop */
@@ -202,6 +205,12 @@
                     const x = e.pageX - slider.offsetLeft;
                     const walk = (x - startX) * 2; // Velocità dello scroll
                     slider.scrollLeft = scrollLeft - walk;
+                });
+
+                // Disabilita il drag-and-drop delle immagini
+                const imgs = slider.querySelectorAll('img');
+                imgs.forEach(img => {
+                    img.addEventListener('dragstart', (e) => e.preventDefault());
                 });
 
                 // Aggiunta dello scroll tramite tocco per i dispositivi touch
