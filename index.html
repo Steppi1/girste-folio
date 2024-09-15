@@ -104,22 +104,11 @@
             font-size: 1rem;
         }
 
-        .disclaimer {
+
+         .disclaimer {
             text-align: left;
             margin: 30px 10px;
             font-size: 1rem;
-        }
-
-        .footer-three-columns {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .footer-three-columns div {
-            width: 30%;
-            padding: 5px;
-            font-size: 0.9rem;
         }
         
     </style>
@@ -129,8 +118,7 @@
     <section class="section">
         <div class="three-columns">
             <div> Stefano Girard </div>
-            <div> <a href="mailto:me@girste.com.com"> me@girste.com </a>
-</div>
+            <div> <a href="mailto:me@girste.com.com"> me@girste.com </a></div>
             <div> I'm a designer from Italy, living in the mountains near Turin. My journey began at age 6 with playful collages in MS Word, where Clippy 
                 once asked what I'd like to do, and I answered, "this, for life." I’ve been hooked ever since. I craft visual identities for brands, 
                 driven by creativity and fresh ideas. Alongside design, I’m passionate about writing and often take on copywriting projects. 
@@ -154,14 +142,12 @@
                 <img src="marlus-1.png" alt="Immagine Placeholder 1">
                 <img src="marlus-3.png" alt="Immagine Placeholder 2">
                 <img src="marlus-4.jpeg" alt="Immagine Placeholder 3">
-                 <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
+                <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
             </div>
         </div>
         <div class="divider"></div>
     </section>
 
-
-    
     <!-- SLIDER 2 -->
     <section class="section">
         <div class="three-columns">
@@ -179,9 +165,89 @@
         <div class="divider"></div>
     </section>
 
+    <!-- SLIDER 3  -->
+    <section class="section">
+        <div class="three-columns">
+            <div> Amaro Màrlus </div>
+            <div> 
+                Revamped branding for an emerging amaro producer in the Turin area. 
+                A classic touch with colors reflecting the spirit of the drink, and a typeface inspired by vintage local bottles. </div>
+            <div> 2023 </div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="marlus-1.png" alt="Immagine Placeholder 1">
+                <img src="marlus-3.png" alt="Immagine Placeholder 2">
+                <img src="marlus-4.jpeg" alt="Immagine Placeholder 3">
+                <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- SLIDER 4  -->
+    <section class="section">
+        <div class="three-columns">
+            <div> Amaro Màrlus </div>
+            <div> 
+                Revamped branding for an emerging amaro producer in the Turin area. 
+                A classic touch with colors reflecting the spirit of the drink, and a typeface inspired by vintage local bottles. </div>
+            <div> 2023 </div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="marlus-1.png" alt="Immagine Placeholder 1">
+                <img src="marlus-3.png" alt="Immagine Placeholder 2">
+                <img src="marlus-4.jpeg" alt="Immagine Placeholder 3">
+                <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- SLIDER 5  -->
+    <section class="section">
+        <div class="three-columns">
+            <div> Amaro Màrlus </div>
+            <div> 
+                Revamped branding for an emerging amaro producer in the Turin area. 
+                A classic touch with colors reflecting the spirit of the drink, and a typeface inspired by vintage local bottles. </div>
+            <div> 2023 </div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="marlus-1.png" alt="Immagine Placeholder 1">
+                <img src="marlus-3.png" alt="Immagine Placeholder 2">
+                <img src="marlus-4.jpeg" alt="Immagine Placeholder 3">
+                <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- SLIDER 6  -->
+    <section class="section">
+        <div class="three-columns">
+            <div> Amaro Màrlus </div>
+            <div> 
+                Revamped branding for an emerging amaro producer in the Turin area. 
+                A classic touch with colors reflecting the spirit of the drink, and a typeface inspired by vintage local bottles. </div>
+            <div> 2023 </div>
+        </div>
+        <div class="image-text-container">
+            <div class="slider">
+                <img src="marlus-1.png" alt="Immagine Placeholder 1">
+                <img src="marlus-3.png" alt="Immagine Placeholder 2">
+                <img src="marlus-4.jpeg" alt="Immagine Placeholder 3">
+                <img src="Marlus-2.jpeg" alt="Immagine Placeholder 3">
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
     <!-- DISCLAIMER E ARKIVE -->
     <section class="section">
-        <div class="footer-three-columns">
+        <div class="three-columns">
             <div class="disclaimer">
                 This site is purely visual. It does not save any data, use cookies, 
                 measure activity, or track anything, even anonymously. It is entirely 
@@ -193,62 +259,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sliders = document.querySelectorAll('.slider');
-            sliders.forEach(slider => {
-                let isMouseDown = false;
-                let startX;
-                let scrollLeft;
-
-                slider.addEventListener('mousedown', (e) => {
-                    isMouseDown = true;
-                    startX = e.pageX - slider.offsetLeft;
-                    scrollLeft = slider.scrollLeft;
-                    slider.style.cursor = 'grabbing'; // Feedback visivo
-                });
-
-                slider.addEventListener('mouseleave', () => {
-                    isMouseDown = false;
-                    slider.style.cursor = 'grab'; // Ripristina il cursore
-                });
-
-                slider.addEventListener('mouseup', () => {
-                    isMouseDown = false;
-                    slider.style.cursor = 'grab'; // Ripristina il cursore
-                });
-
-                slider.addEventListener('mousemove', (e) => {
-                    if (!isMouseDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 2; // Velocità dello scroll
-                    slider.scrollLeft = scrollLeft - walk;
-                });
-
-                // Disabilita il drag delle immagini
-                const imgs = slider.querySelectorAll('img');
-                imgs.forEach(img => {
-                    img.addEventListener('dragstart', (e) => e.preventDefault());
-                });
-
-                // Aggiunta dello scroll tramite tocco per i dispositivi touch
-                let touchStartX = 0;
-                let touchScrollLeft = 0;
-
-                slider.addEventListener('touchstart', (e) => {
-                    touchStartX = e.touches[0].pageX - slider.offsetLeft;
-                    touchScrollLeft = slider.scrollLeft;
-                });
-
-                slider.addEventListener('touchmove', (e) => {
-                    const touchX = e.touches[0].pageX - slider.offsetLeft;
-                    const moveX = touchX - touchStartX;
-                    slider.scrollLeft = touchScrollLeft - moveX;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
