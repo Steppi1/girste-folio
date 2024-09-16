@@ -39,7 +39,8 @@
 
          html {
             font-size: 16px; /* Imposta la dimensione di base del font */
-            overflow: hidden;
+            
+           }
          
          * {
          margin: 0;
@@ -51,6 +52,16 @@
          color: #333;
          background-color: #fff;
          line-height: 1.8;
+
+             /* Permette lo scroll ma nasconde la scrollbar */
+    overflow: auto; /* Permette lo scroll */
+    scrollbar-width: none; /* Nasconde la scrollbar in Firefox */
+    -ms-overflow-style: none; /* Nasconde la scrollbar in IE e Edge */
+            /* Nasconde la scrollbar in Chrome e Safari */
+::-webkit-scrollbar {
+    display: none; /* Nasconde la scrollbar */
+         }
+
          
          }
          .section {
